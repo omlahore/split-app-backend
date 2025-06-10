@@ -1,5 +1,12 @@
 # Split Expense App
 
+![image](https://github.com/user-attachments/assets/0cfbcd65-a790-4429-b281-4739aa4fec64)
+![image](https://github.com/user-attachments/assets/ca1221ca-1b56-486e-b026-58bea307b38f)
+![image](https://github.com/user-attachments/assets/3893aaed-e6b0-4ddf-b7f7-a915242ca672)
+![image](https://github.com/user-attachments/assets/53daa922-e8fd-4c9f-9621-caa20e75bb10)
+![image](https://github.com/user-attachments/assets/d7c177b7-4fc1-4118-bd59-357550a5b7ab)
+
+
 A simple "Splitwise-style" expense‑splitting backend + frontend that lets groups of friends or roommates track shared expenses, calculate who owes whom, and view optimized settlement recommendations.
 
 Live Frontend: https://split-app-frontend.vercel.app
