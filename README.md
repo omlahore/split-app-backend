@@ -1,177 +1,113 @@
-# Split Expense App
+<p align="center">
+  <img src="https://raw.githubusercontent.com/<your-username>/split-expense-app/main/frontend/public/logo192.png" alt="Split Expense App Logo" width="120" />
+</p>
 
-![image](https://github.com/user-attachments/assets/0cfbcd65-a790-4429-b281-4739aa4fec64)
-![image](https://github.com/user-attachments/assets/ca1221ca-1b56-486e-b026-58bea307b38f)
-![image](https://github.com/user-attachments/assets/3893aaed-e6b0-4ddf-b7f7-a915242ca672)
-![image](https://github.com/user-attachments/assets/53daa922-e8fd-4c9f-9621-caa20e75bb10)
-![image](https://github.com/user-attachments/assets/d7c177b7-4fc1-4118-bd59-357550a5b7ab)
+# Split Expense App 🚀
 
+> A modern, sleek, Splitwise-style app to track shared expenses, settle balances, view analytics, and manage recurring costs—all in one place!
 
-A simple "Splitwise-style" expense‑splitting backend + frontend that lets groups of friends or roommates track shared expenses, calculate who owes whom, and view optimized settlement recommendations.
+[![Live Frontend](https://img.shields.io/badge/Frontend-Vercel-blue?logo=vercel&logoColor=white)](https://split-app-frontend.vercel.app)
+[![Live Backend](https://img.shields.io/badge/Backend-Railway-red?logo=railway&logoColor=white)](https://split-app-backend-production-1371.up.railway.app)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-Live Frontend: https://split-app-frontend.vercel.app
-Live Backend API: https://split-app-backend-production-1371.up.railway.app
+---
 
-## Table of Contents
+## 📖 Table of Contents
 
-- [Problem Statement](#problem-statement)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Screenshots](#screenshots)
-- [API Endpoints](#api-endpoints)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Clone & Install](#clone--install)
-  - [Environment Variables](#environment-variables)
-  - [Run Locally](#run-locally)
-- [Postman Collection](#postman-collection)
-- [Project Structure](#project-structure)
-- [Known Limitations & Next Steps](#known-limitations--next-steps)
-- [License](#license)
+1. [✨ Features](#-features)  
+2. [📸 Screenshots](#-screenshots)  
+3. [🛠 Tech Stack](#-tech-stack)  
+4. [🚀 Getting Started](#-getting-started)  
+5. [📡 API Reference](#-api-reference)  
+6. [📂 Project Structure](#-project-structure)  
+7. [📝 Contributing](#-contributing)  
+8. [⚖️ License](#️-license)  
 
-## Problem Statement
+---
 
-Build a backend system that helps groups of people split expenses fairly and calculate who owes money to whom. Think of scenarios like:
+## ✨ Features
 
-- Roommates splitting rent & utilities
-- Friends sharing a dinner bill
-- Travel buddies tracking trip expenses
+- **Expense Tracking**  
+  - Add, edit & delete expenses  
+  - Supports **equal**, **percentage**, or **exact** splits  
+  - Auto-creates people as you enter names  
 
-## Features
+- **Settlement Calculations**  
+  - View **net balances** per person  
+  - **Optimized minimal-transaction** settlements  
 
-### Core Requirements
+- **Recurring Expenses**  
+  - Create monthly/weekly/daily templates  
+  - Automatic next-date scheduling  
 
-**Expense Tracking**
-- POST /expenses: add a new expense (amount, description, paid_by)
-- Auto-create new people when referenced
-- GET /expenses: list all expenses
-- PUT /expenses/:id & DELETE /expenses/:id
-- Support equal split, percentage share, or exact amounts per person
+- **Dashboard Grid Layout**  
+  - Responsive **2-column** summary & analytics  
+  - Sticky header with **dark/light** theme toggle  
 
-**Settlement Calculations**
-- GET /balances: net owed/owed-to per person
-- GET /settlements: optimized minimal-transaction settlement list
+- **Interactive Charts**  
+  - **Bar chart** for monthly spend  
+  - **Pie chart** for category breakdown  
+  - **Bar chart** for individual vs. group  
 
-**Validation & Error Handling**
-- Positive amounts, required fields, valid person names
-- Graceful errors with clear messages & proper HTTP status codes
+- **Inline Editing & Quick Actions**  
+  - Hover-to-edit fields  
+  - “Mark as Settled” & “Delete” buttons  
 
-**Optional Extras**
-- Recurring transactions (rent, subscriptions)
-- Expense categories & breakdown
-- Monthly analytics & spending charts
-- Basic HTML dashboard
+- **FAB & Modal Forms**  
+  - Floating **＋** button opens modal forms  
+  - Floating labels for clarity  
 
-## Tech Stack
+- **Filter, Search & Pagination**  
+  - Live search, date-range & category filters  
+  - Server-side pagination with Prev/Next  
 
-- **Backend**: Node.js + Express (deployed on Railway)
-- **Database**: PostgreSQL (Railway managed)
-- **Frontend**: React (Vercel)
-- **API Testing**: Postman
+- **Toast Notifications**  
+  - Success & error toasts on add/edit/delete  
 
-## Screenshots
+- **Accessibility & Keyboard Shortcuts**  
+  - ARIA labels, proper focus states  
+  - Shortcut keys (e.g. “n” to add expense)  
 
-*Add your app screenshots here*
+- **Dark / Light Mode**  
+  - Auto-detect system preference  
+  - Persist user choice in localStorage  
 
-## API Endpoints
+---
 
-### Expense Management
+## 📸 Screenshots
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /expenses | List all expenses |
-| POST | /expenses | Create a new expense |
-| PUT | /expenses/:id | Update an existing expense |
-| DELETE | /expenses/:id | Delete an expense |
+<div align="center">
 
-### Sample Payload
+<img src="https://github.com/user-attachments/assets/afcc0572-2b32-450c-9d0d-b30a03961064" alt="Dashboard" width="300" />  
+<img src="https://github.com/user-attachments/assets/f96a09a9-7647-4b29-9abe-7882515c731a" alt="Analytics" width="300" />  
+<img src="https://github.com/user-attachments/assets/55566822-dac4-49e1-bd98-f28c4c15ddac" alt="Dark Mode" width="300" />  
+<img src="https://github.com/user-attachments/assets/6da9c35f-dd10-45c5-a173-39f1f9ecf29f" alt="Recurring" width="300" />
 
-```json
-POST /expenses  
-{
-  "amount": 60.00,
-  "description": "Dinner at restaurant",
-  "paid_by": "Shantanu"
-}
-```
+</div>
 
-### Settlements & People
+---
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /people | List all participants (derived from expenses) |
-| GET | /balances | Show net owed vs. owed-to per person |
-| GET | /settlements | Optimized settlement transactions |
+## 🛠 Tech Stack
 
-## Getting Started
+- **Frontend**: React, Vite, Recharts, React-Icons  
+- **Backend**: Node.js, Express, Mongoose (MongoDB)  
+- **Styling**: CSS Variables, Flexbox & Grid  
+- **Testing**: Postman / Axios  
+- **Deployment**: Vercel (frontend), Railway (backend)  
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js ≥ 14.x
-- Yarn or npm
-- Git
+- Node.js ≥ 14.x  
+- npm or Yarn  
+- Git  
 
 ### Clone & Install
 
 ```bash
 git clone https://github.com/<your-username>/split-expense-app.git
 cd split-expense-app/backend
-yarn install    # or npm install
-```
-
-### Environment Variables
-
-Create a .env file in /backend with:
-
-```env
-DATABASE_URL=postgres://<user>:<pass>@<host>:<port>/<db>
-PORT=3000
-```
-
-### Run Locally
-
-```bash
-# start backend on http://localhost:3000
-yarn start
-
-# in a separate tab, run frontend
-cd ../frontend
-yarn install
-yarn start      # opens http://localhost:3001
-```
-
-## Postman Collection
-
-Import our pre-configured collection + environment to test every endpoint:
-
-- Collection JSON: https://gist.github.com//
-- Environment JSON: https://gist.github.com//
-
-## Project Structure
-
-```
-/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── index.js
-│   ├── .env
-│   └── package.json
-└── frontend/
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   └── App.jsx
-    └── package.json
-```
-
-## Known Limitations & Next Steps
-
-- No user authentication yet
-- Future enhancements: recurring payments, category filters, analytics dashboard, notifications
-
-## License
-
-MIT License
+npm install
