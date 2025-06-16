@@ -1,11 +1,16 @@
-// src/routes/expenses.js
+// backend/src/routes/expenses.js
 const router  = require('express').Router();
 const Expense = require('../models/expense');
 
 // List all expenses
 router.get('/', async (req, res) => {
-  const all = await Expense.find().sort('-createdAt');
-  res.json({ success: true, data: all });
+  try {
+    const all = await Expense.find().sort('-createdAt');
+    res.json({ success: true, data: all });
+  } catch (err) {
+    console.error('Error listing expenses:', err);
+    res.status(500).json({ success: false, message: err.message });
+  }
 });
 
 // Add a new expense
@@ -29,17 +34,46 @@ router.put('/:id', async (req, res) => {
     if (!ex) return res.status(404).json({ success: false, message: 'Expense not found' });
     res.json({ success: true, data: ex });
   } catch (err) {
+    if (err.name === 'CastError') {
+      return res.status(400).json({ success: false, message: 'Invalid expense ID' });
+    }
     res.status(400).json({ success: false, message: err.message });
+  }
+});
+
+// Mark an expense as settled
+router.post('/:id/settle', async (req, res) => {
+  try {
+    const ex = await Expense.findById(req.params.id);
+    if (!ex) return res.status(404).json({ success: false, message: 'Expense not found' });
+    ex.settled = true;
+    await ex.save();
+    res.json({ success: true, data: ex, message: 'Expense marked as settled' });
+  } catch (err) {
+    if (err.name === 'CastError') {
+      return res.status(400).json({ success: false, message: 'Invalid expense ID' });
+    }
+    console.error('Error settling expense:', err);
+    res.status(500).json({ success: false, message: 'Server error' });
   }
 });
 
 // Delete an expense by ID
 router.delete('/:id', async (req, res) => {
-  const ex = await Expense.findByIdAndDelete(req.params.id);
-  if (!ex) return res.status(404).json({ success: false, message: 'Expense not found' });
-  res.json({ success: true, message: 'Expense deleted' });
+  try {
+    const ex = await Expense.findByIdAndDelete(req.params.id);
+    if (!ex) return res.status(404).json({ success: false, message: 'Expense not found' });
+    res.json({ success: true, message: 'Expense deleted' });
+  } catch (err) {
+    if (err.name === 'CastError') {
+      return res.status(400).json({ success: false, message: 'Invalid expense ID' });
+    }
+    console.error('Error deleting expense:', err);
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
 });
 
+// Category summary
 router.get('/categories', async (req, res) => {
   try {
     const summary = await Expense.aggregate([

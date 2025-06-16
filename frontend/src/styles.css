@@ -1,5 +1,6 @@
 /* Import a clean system font (or swap for Google Fonts if you like) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap');
 
 :root {
   /* Color palette */
@@ -34,6 +35,11 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: var(--spacing);
+}
+
+h1, h2, h3, .app-title {
+  font-family: 'Merriweather', serif;
+  color: var(--color-text);
 }
 
 /* Headers */
@@ -174,3 +180,32 @@ ul {
 /* Utility spacing */
 .mt-4 { margin-top: var(--spacing); }
 .mb-4 { margin-bottom: var(--spacing); }
+
+
+/* Light theme (default) */
+:root {
+  --color-bg:      #f0f2f5;
+  --color-surface: #ffffff;
+  --color-primary: #4F46E5;
+  --color-accent:  #F43F5E;
+  --color-text:    #333333;
+  --color-muted:   #6b7280;
+  --color-hover:   rgba(0,0,0,0.05);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --color-bg:      #1f2937;
+  --color-surface: #374151;
+  --color-primary: #6366f1;
+  --color-accent:  #f472b6;
+  --color-text:    #f9fafb;
+  --color-muted:   #9ca3af;
+  --color-hover:   rgba(255,255,255,0.1);
+}
+
+/* Ensure body uses our variables */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}

@@ -1,42 +1,365 @@
-#root {
+/* frontend/src/App.css */
+
+/* App Shell */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* HEADER */
+.header {
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--spacing);
+}
+
+.header .logo {
+  height: 2.5rem;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: var(--spacing);
+  color: var(--color-primary);
+  flex-grow: 1;
+}
+
+/* NAVIGATION */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: calc(var(--spacing) * 1.5);
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+
+.nav a:hover,
+.nav a:focus {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* MAIN CONTENT */
+main.container {
+  flex: 1; /* grow to fill */
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+}
+
+/* Section headings get a divider */
+section + section {
+  border-top: 1px solid #e5e7eb;
+  margin-top: calc(var(--spacing) * 2);
+  padding-top: calc(var(--spacing) * 2);
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--color-surface);
   text-align: center;
+  padding: var(--spacing);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.footer .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--color-muted);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* UTILITY OVERRIDES */
+/* Remove default container centering on header/footer child containers */
+.header-inner,
+.footer .container {
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
+}
+
+/* Smooth scroll for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add to frontend/src/App.css */
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.875rem;
+  margin-bottom: calc(var(--spacing) / 2);
+  color: var(--color-muted);
+}
+
+.breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs .separator {
+  margin: 0 var(--spacing) 0 var(--spacing);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs .current span {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  padding: 0.5rem var(--spacing);
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--color-hover);
+}
+
+/* --- Dashboard Grid --- */
+.dashboard-grid {
+  display: grid;
+  gap: var(--spacing);
+  margin-top: calc(var(--spacing) * 2);
+}
+
+/* Two-columns on tablet+ */
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Style each card-section */
+.dashboard-grid > section {
+  background: var(--color-surface);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Add spacing between the two summary cards inside the first column */
+.dashboard-grid > section:first-child > * + * {
+  margin-top: var(--spacing);
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: var(--color-surface);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.modal-close {
+  position: absolute;
+  top: var(--spacing);
+  right: var(--spacing);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--color-muted);
+  transition: color var(--transition);
+}
+.modal-close:hover {
+  color: var(--color-text);
+}
+
+/* --- Floating Action Button (FAB) --- */
+.fab {
+  position: fixed;
+  bottom: var(--spacing);
+  right: var(--spacing);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform var(--transition);
+  z-index: 100;
+}
+.fab:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* --- Floating Labels --- */
+.expense-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.floating-label-group {
+  position: relative;
+  margin-bottom: var(--spacing);
+}
+
+.floating-label-group input,
+.floating-label-group select {
+  width: 100%;
+  padding: 1rem 0.75rem 0.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  background: transparent;
+  font-size: 1rem;
+}
+.floating-label-group input:focus,
+.floating-label-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.floating-label-group label {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.75rem;
+  pointer-events: none;
+  transition: transform var(--transition), font-size var(--transition), color var(--transition);
+  color: var(--color-muted);
+}
+.floating-label-group input:not(:placeholder-shown) + label,
+.floating-label-group select:not([value=""]) + label,
+.floating-label-group input:focus + label,
+.floating-label-group select:focus + label {
+  transform: translateY(-1.4rem);
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+
+/* --- Errors & Buttons --- */
+.error-text {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing);
+  text-align: left;
+}
+
+.btn.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: var(--spacing);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn.btn-primary:hover {
+  background: var(--color-primary);
+  opacity: 0.9;
+}
+
+
+.analytics-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+
+.chart-card {
+  background: var(--color-surface);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 1. On large screens, bump max-width from 800 to 1200 */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* 2. Give Analytics twice the width of Summary */
+.dashboard-grid {
+  display: grid;
+  gap: var(--spacing);
+  margin-top: calc(var(--spacing) * 2);
+}
+
+@media (min-width: 768px) {
+  /* 1fr for Summary, 2fr for Analytics */
+  .dashboard-grid {
+    grid-template-columns: 1fr 2fr;
   }
 }
 
-.card {
-  padding: 2em;
+/* 3. Make your Analytics charts grid fluid */
+.analytics-charts {
+  display: grid;
+  gap: var(--spacing);
+  /* each chart takes at least 300px, but share remaining space equally */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.read-the-docs {
-  color: #888;
+/* keep your existing .chart-card styling here */
+.chart-card {
+  background: var(--color-surface);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }

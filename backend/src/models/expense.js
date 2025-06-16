@@ -15,7 +15,7 @@ const ExpenseSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Paid_by (person) is required']
   },
-category: {
+  category: {
     type: String,
     enum: ['Food', 'Travel', 'Utilities', 'Entertainment', 'Other'],
     default: 'Other',
@@ -33,10 +33,24 @@ category: {
       default: {}
     }
   },
+  settled: {
+    type: Boolean,
+    default: false
+  },
   createdAt: {
     type: Date,
     default: Date.now
   }
+});
+
+// Expose `id` (string) instead of `_id`
+ExpenseSchema.virtual('id').get(function() {
+  return this._id.toHexString();
+});
+
+// Include virtuals when converting to JSON
+ExpenseSchema.set('toJSON', {
+  virtuals: true
 });
 
 module.exports = mongoose.model('Expense', ExpenseSchema);
