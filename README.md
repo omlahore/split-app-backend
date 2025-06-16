@@ -1,4 +1,4 @@
-# Split Expense App 🚀
+![image](https://github.com/user-attachments/assets/ee177b61-1c0a-403d-9753-e31b8ec355be)# Split Expense App 🚀
 
 > A modern, sleek, Splitwise-style app to track shared expenses, settle balances, view analytics, and manage recurring costs—all in one place!
 
@@ -62,24 +62,7 @@
 
 ## 📸 Screenshots
 
-<div align="center">
-<table>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/0cfbcd65-a790-4429-b281-4739aa4fec64" alt="Dashboard" width="280" /></td>
-    <td><img src="https://github.com/user-attachments/assets/ca1221ca-1b56-486e-b026-58bea307b38f" alt="Analytics" width="280" /></td>
-    <td><img src="https://github.com/user-attachments/assets/3893aaed-e6b0-4ddf-b7f7-a915242ca672" alt="Dark Mode" width="280" /></td>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/53daa922-e8fd-4c9f-9621-caa20e75bb10" alt="Recurring Form" width="280" /></td>
-    <td><img src="https://github.com/user-attachments/assets/d7c177b7-4fc1-4118-bd59-357550a5b7ab" alt="Monthly Recurring" width="280" /></td>
-    <td><img src="https://github.com/user-attachments/assets/a38f4315-7873-472d-ae46-95edc9e5fe56" alt="Error Handling" width="280" /></td>
-  </tr>
-  <tr>
-    <td colspan="3"><img src="https://github.com/user-attachments/assets/cf4a3862-93f7-459f-9756-80dd98c49663" alt="Mobile View" width="600" /></td>
-  </tr>
-</table>
-</div>
-
+<div align="center"> <table> <tr> <td><img src="https://github.com/user-attachments/assets/e195a867-f22d-4c81-8975-8d8d387e7a07" alt="Screenshot 1" width="280" /></td> <td><img src="https://github.com/user-attachments/assets/1f7f2cf3-609b-419a-8f82-fb973ac9e04b" alt="Screenshot 2" width="280" /></td> <td><img src="https://github.com/user-attachments/assets/092c6488-cd6d-4d02-83c5-5adeb5624d54" alt="Screenshot 3" width="280" /></td> </tr> <tr> <td><img src="https://github.com/user-attachments/assets/f63fc612-1c4b-404f-b773-0ca868a37f66" alt="Screenshot 4" width="280" /></td> <td><img src="https://github.com/user-attachments/assets/e0f85848-e61d-47ee-82cf-c53c8ee45c83" alt="Screenshot 5" width="280" /></td> <td><img src="https://github.com/user-attachments/assets/8894e095-8b39-43a9-a841-87b2baef8c46" alt="Screenshot 6" width="280" /></td> </tr> <tr> <td><img src="https://github.com/user-attachments/assets/29906bb2-5478-4a72-95ee-6f970c2bf728" alt="Screenshot 7" width="280" /></td> <td><img src="https://github.com/user-attachments/assets/f001fc1f-69d3-46eb-b028-81f073226eb1" alt="Screenshot 8" width="280" /></td> <td><img src="https://github.com/user-attachments/assets/370e0a24-8857-440f-93d5-b6f3c549a114" alt="Screenshot 9" width="280" /></td> </tr> <tr> <td colspan="3"><img src="https://github.com/user-attachments/assets/d6298436-78e4-493e-a163-6a6525546481" alt="Screenshot 10" width="600" /></td> </tr> </table> </div>
 ---
 
 ## 🛠 Tech Stack
