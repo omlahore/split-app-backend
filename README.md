@@ -2,11 +2,12 @@
 
 > A modern, sleek, Splitwise-style app to track shared expenses, settle balances, view analytics, and manage recurring costs—all in one place!
 
-[![Live Frontend](https://img.shields.io/badge/Frontend-Vercel-blue?logo=vercel&logoColor=white)](https://split-app-frontend.vercel.app)  
+[![Live Frontend](https://img.shields.io/badge/Frontend-Vercel-blue?logo=vercel&logoColor=white)]([https://split-app-frontend.vercel.app](https://split-app-backend-lime.vercel.app/))  
 [![Live Backend](https://img.shields.io/badge/Backend-Railway-red?logo=railway&logoColor=white)](https://split-app-backend-production-1371.up.railway.app)  
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
+<p align="center"> <a href="https://split-app-frontend.vercel.app" target="_blank"> <img src="https://img.shields.io/badge/Live%20Frontend-Visit%20App-brightgreen?style=for-the-badge&logo=vercel" alt="Live Frontend" /> </a> &nbsp; <a href="https://split-app-backend-production-1371.up.railway.app" target="_blank"> <img src="https://img.shields.io/badge/Live%20Backend-Visit%20API-blue?style=for-the-badge&logo=railway" alt="Live Backend" /> </a> </p>
 
 ## 📖 Table of Contents
 
