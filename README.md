@@ -8,7 +8,7 @@
 
 ---
 <h2 align="center">
-  <a href="[https://split-app-frontend.vercel.app](https://split-app-backend-lime.vercel.app/)" target="_blank">Launch Frontend App</a>
+  <a href="https://split-app-backend-lime.vercel.app/" target="_blank">Launch Frontend App</a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://split-app-backend-production-1371.up.railway.app" target="_blank">Launch Backend API</a>
 </h2>
