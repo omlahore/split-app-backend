@@ -7,7 +7,12 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
-<p align="center"> <a href="https://split-app-frontend.vercel.app" target="_blank"> <img src="https://img.shields.io/badge/Live%20Frontend-Visit%20App-brightgreen?style=for-the-badge&logo=vercel" alt="Live Frontend" /> </a> &nbsp; <a href="https://split-app-backend-production-1371.up.railway.app" target="_blank"> <img src="https://img.shields.io/badge/Live%20Backend-Visit%20API-blue?style=for-the-badge&logo=railway" alt="Live Backend" /> </a> </p>
+<h2 align="center">
+  <a href="https://split-app-frontend.vercel.app" target="_blank">Launch Frontend App</a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://split-app-backend-production-1371.up.railway.app" target="_blank">Launch Backend API</a>
+</h2>
+
 
 ## 📖 Table of Contents
 
